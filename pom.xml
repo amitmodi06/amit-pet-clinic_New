@@ -43,6 +43,6 @@
     <scm>
         <developerConnection>scm:git:https://github.com/amitmodi06/amit-pet-clinic_New.git</developerConnection>
       <tag>amit-pet-clinic_New-0.0.1</tag>
-  </scm>
+    </scm>
 
 </project>
