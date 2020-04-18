@@ -3,7 +3,7 @@ package amit.springframework.amitpetclinic_New.model;
 /**
  * created by KUAM on 4/16/2020
  */
-public class Person {
+public class Person extends BaseEntity {
     private String firstName;
     private String lastName;
 
