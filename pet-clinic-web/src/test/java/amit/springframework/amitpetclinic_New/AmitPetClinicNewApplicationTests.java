@@ -1,4 +1,4 @@
-package amitpetclinic_New;
+package amit.springframework.amitpetclinic_New;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
