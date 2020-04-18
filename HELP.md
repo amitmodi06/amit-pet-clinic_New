@@ -1,7 +1,7 @@
 # Read Me First
 The following was discovered as part of building this project:
 
-* The original package name 'amit.springframework.amit-pet-clinic_New' is invalid and this project uses 'amit.springframework.amitpetclinic_New' instead.
+* The original package name 'amit.springframework.amit-pet-clinic_New' is invalid and this project uses 'amit.springframework.amit.springframework.amitpetclinic_New' instead.
 
 # Getting Started
 
