@@ -1,6 +1,7 @@
 package amit.springframework.amitpetclinic_New.services.map;
 
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
 
@@ -12,7 +13,7 @@ public abstract class AbstractMapService<T, Id> {
     protected Map<Id, T> map = new HashMap<>();
 
     Set<T> findAll(){
-        return new HashMap<>(map.values());
+        return new HashSet<>(map.values());
     }
 
     T findById(Id id){
