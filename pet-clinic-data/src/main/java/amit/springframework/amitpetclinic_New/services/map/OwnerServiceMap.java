@@ -1,14 +1,14 @@
 package amit.springframework.amitpetclinic_New.services.map;
 
 import amit.springframework.amitpetclinic_New.model.Owner;
-import amit.springframework.amitpetclinic_New.services.CrudService;
+import amit.springframework.amitpetclinic_New.services.OwnerService;
 
 import java.util.Set;
 
 /**
  * created by KUAM on 4/19/2020
  */
-public class OwnerServiceMap extends AbstractMapService<Owner, Long> implements CrudService<Owner, Long> {
+public class OwnerServiceMap extends AbstractMapService<Owner, Long> implements OwnerService {
     @Override
     public Set<Owner> findAll() {
         return super.findAll();
@@ -32,5 +32,10 @@ public class OwnerServiceMap extends AbstractMapService<Owner, Long> implements 
     @Override
     public void deleteById(Long id) {
         super.deleteById(id);
+    }
+
+    @Override
+    public Owner findByLastName(String lastName) {
+        return null;
     }
 }

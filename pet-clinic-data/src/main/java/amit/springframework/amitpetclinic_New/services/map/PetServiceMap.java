@@ -1,14 +1,14 @@
 package amit.springframework.amitpetclinic_New.services.map;
 
 import amit.springframework.amitpetclinic_New.model.Pet;
-import amit.springframework.amitpetclinic_New.services.CrudService;
+import amit.springframework.amitpetclinic_New.services.PetService;
 
 import java.util.Set;
 
 /**
  * created by KUAM on 4/19/2020
  */
-public class PetServiceMap extends AbstractMapService<Pet, Long> implements CrudService<Pet, Long> {
+public class PetServiceMap extends AbstractMapService<Pet, Long> implements PetService {
 
     @Override
     public Set<Pet> findAll() {
