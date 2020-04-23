@@ -2,12 +2,14 @@ package amit.springframework.amitpetclinic_New.services.map;
 
 import amit.springframework.amitpetclinic_New.model.Owner;
 import amit.springframework.amitpetclinic_New.services.OwnerService;
+import org.springframework.stereotype.Service;
 
 import java.util.Set;
 
 /**
  * created by KUAM on 4/19/2020
  */
+@Service
 public class OwnerServiceMap extends AbstractMapService<Owner, Long> implements OwnerService {
     @Override
     public Set<Owner> findAll() {
