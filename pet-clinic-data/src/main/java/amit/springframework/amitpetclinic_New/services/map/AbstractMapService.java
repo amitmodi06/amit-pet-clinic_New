@@ -1,16 +1,15 @@
 package amit.springframework.amitpetclinic_New.services.map;
 
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.Map;
-import java.util.Set;
+import amit.springframework.amitpetclinic_New.model.BaseEntity;
+
+import java.util.*;
 
 /**
  * created by KUAM on 4/19/2020
  */
-public abstract class AbstractMapService<T, Id> {
+public abstract class AbstractMapService<T extends BaseEntity, Id extends Long> {
 
-    protected Map<Id, T> map = new HashMap<>();
+    protected Map<Long, T> map = new HashMap<>();
 
     Set<T> findAll(){
         return new HashSet<>(map.values());
@@ -20,8 +19,15 @@ public abstract class AbstractMapService<T, Id> {
         return map.get(id);
     }
 
-    T save(Id id, T object){
-        map.put(id, object);
+    T save(T object){
+        if (object !=null){
+            if(object.getId() == null){
+                object.setId(getNextId());
+            }
+            map.put(object.getId(), object);
+        }else{
+            throw new RuntimeException("Object can't be null..!!");
+        }
         return object;
     }
 
@@ -33,4 +39,13 @@ public abstract class AbstractMapService<T, Id> {
         map.entrySet().removeIf(entry -> entry.getValue().equals(object));
     }
 
+    private Long getNextId(){
+        Long nextId=null;
+        try{
+            nextId = Collections.max(map.keySet())+1;
+        }catch(NoSuchElementException e){
+            nextId=1L;
+        }
+        return nextId;
+    }
 }
