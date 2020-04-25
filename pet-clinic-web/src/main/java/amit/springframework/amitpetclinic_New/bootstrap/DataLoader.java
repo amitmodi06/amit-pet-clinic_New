@@ -1,6 +1,7 @@
 package amit.springframework.amitpetclinic_New.bootstrap;
 
 import amit.springframework.amitpetclinic_New.model.Owner;
+import amit.springframework.amitpetclinic_New.model.Pet;
 import amit.springframework.amitpetclinic_New.model.PetType;
 import amit.springframework.amitpetclinic_New.model.Vet;
 import amit.springframework.amitpetclinic_New.services.OwnerService;
@@ -8,6 +9,8 @@ import amit.springframework.amitpetclinic_New.services.PetTypeService;
 import amit.springframework.amitpetclinic_New.services.VetService;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
+
+import java.time.LocalDate;
 
 /**
  * created by KUAM on 4/23/2020
@@ -39,12 +42,32 @@ public class DataLoader implements CommandLineRunner {
         Owner owner1 = new Owner();
         owner1.setFirstName("Amit");
         owner1.setLastName("kumar");
+        owner1.setAddress("123 Defence Enclave");
+        owner1.setCity("Meerut");
+        owner1.setTelephone("1234567890");
+
+        Pet amitsPet = new Pet();
+        amitsPet.setPetType(savedDogPetType);
+        amitsPet.setOwner(owner1);
+        amitsPet.setBirthDate(LocalDate.now());
+        amitsPet.setName("Tiger");
+        owner1.getPets().add(amitsPet);
 
         ownerService.save(owner1);
 
         Owner owner2 = new Owner();
         owner2.setFirstName("Aparna");
         owner2.setLastName("Verma");
+        owner1.setAddress("123 Defence Enclave");
+        owner1.setCity("Meerut");
+        owner1.setTelephone("1234567890");
+
+        Pet aparnasPet = new Pet();
+        aparnasPet.setPetType(savedCatPetType);
+        aparnasPet.setOwner(owner2);
+        aparnasPet.setBirthDate(LocalDate.now());
+        aparnasPet.setName("ChiChi");
+        owner2.getPets().add(aparnasPet);
 
         ownerService.save(owner2);
 
