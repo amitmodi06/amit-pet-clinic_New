@@ -7,7 +7,7 @@ import java.time.LocalDate;
  * created by KUAM on 4/25/2020
  */
 @Entity
-@Table(name + "visits")
+@Table(name = "visits")
 public class Visit extends BaseEntity{
 
     @Column(name = "local_date")
