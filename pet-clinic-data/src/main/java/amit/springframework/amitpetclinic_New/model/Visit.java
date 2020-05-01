@@ -1,14 +1,23 @@
 package amit.springframework.amitpetclinic_New.model;
 
+import javax.persistence.*;
 import java.time.LocalDate;
 
 /**
  * created by KUAM on 4/25/2020
  */
+@Entity
+@Table(name + "visits")
 public class Visit extends BaseEntity{
 
+    @Column(name = "local_date")
     private LocalDate date;
+
+    @Column(name = "description")
     private String description;
+
+    @ManyToOne
+    @JoinColumn(name = "pet_id")
     private Pet pet;
 
     public LocalDate getDate() {
